@@ -1,16 +1,11 @@
-/*
-  Proof of concept.
-  Grab all of the products form the jcrew website
-*/
+/* Proof of concept. Grab all of the products form the jcrew website  */
 
 var links = [];
 var casper = require('casper').create();
 var utils = require('utils')
 
-
 // Make us look like a normal Mac
 casper.userAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X)');
-
 
 /* Grabs all of the product links off the page */
 function getProductLinks () {
@@ -32,7 +27,6 @@ function processProductLinks(links){
 casper.start('https://www.jcrew.com/sale.jsp').then(function() {
     this.echo("Loaded Sale Site");
 });
-
 
 /* Click on the Mens section */
 casper.thenClick('nav#selectCategory > a:nth-child(3)', function() {
